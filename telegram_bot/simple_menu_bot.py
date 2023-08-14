@@ -1,55 +1,44 @@
-# Импортируем нужные методы и классы из библиотеки
-from aiogram import Bot, Dispatcher, executor, types
-# Подключаем тип для команд
+import asyncio
+from aiogram import Bot, Dispatcher, types
 from aiogram.types import BotCommand
+from aiogram.enums import ParseMode
+from aiogram.filters.command import Command
 
-API_TOKEN = '6511515039:AAHuHApjggtPMWSPXwgdsu83hzY71GDb10g'
-bot = Bot(token=API_TOKEN)
-dp = Dispatcher(bot)
+from token_tg import API_TOKEN
+
+
+bot = Bot(token=API_TOKEN, parse_mode=ParseMode.HTML)
+dp = Dispatcher()
 
 
 # Создаем функцию создания команд
-async def set_main_menu(dp):
+async def set_main_menu(bot):
     main_menu = [
         BotCommand(command='/start', description='Начало работы с ботом'),
-        BotCommand(command='/help', description='Помощь'),
-        BotCommand(command='/show_picture', description='Показать картинку'),
-        BotCommand(command='/show_text', description='Показать текст'),
-        BotCommand(command='/show_video', description='Показать видео')]
-    await dp.bot.set_my_commands(main_menu)
+        BotCommand(command='/help', description='Помощь')]
+    await bot.set_my_commands(main_menu)
 
 
-@dp.message_handler(commands=['start'])
+@dp.message(Command('start'))
 async def send_welcome(message: types.Message):
     await message.reply("Выбирай команды в меню.")
 
 
-@dp.message_handler(commands=['help'])
+@dp.message(Command(commands=['help']))
 async def send_welcome(message: types.Message):
     await message.reply("Какая помощь нужна?")
 
 
-@dp.message_handler(commands=['show_picture'])
-async def send_welcome(message: types.Message):
-    await message.reply("Показываю картинку")
-
-
-@dp.message_handler(commands=['show_text'])
-async def send_welcome(message: types.Message):
-    await message.reply("Показываю текст")
-
-
-@dp.message_handler(commands=['show_video'])
-async def send_welcome(message: types.Message):
-    await message.reply("Показываю видео")
-
-
-@dp.message_handler()
+@dp.message()
 async def echo(message: types.Message):
     await message.answer("Вы написали: " + message.text)
 
 
-if __name__ == '__main__':
-    # Устанавливаем собственное меню через on_startup
-    executor.start_polling(dp, skip_updates=True, on_startup=set_main_menu)
+async def main():
+    # Устанавливаем собственное меню через startup
+    dp.startup.register(set_main_menu)
+    await dp.start_polling(bot, skip_updates=True)
 
+
+if __name__ == '__main__':
+   asyncio.run(main())
