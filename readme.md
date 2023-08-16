@@ -7,8 +7,10 @@ Install all libraries:
 or see list libraries in this file
 
 ### Рассмотренные темы:
+* Файлы конфигурации. <code>config</code>
+* Отправка электронной почты. <code>send_email</code>
+* Телеграм-бот. <code>telegram_bot</code>
+* 
 * Работа в форматом JSON (CRUD операции).  
 * Работа в форматом XML (CRUD операции).
-* Отправка электронной почты.
 * Отправка сообщения в телеграм пользователю.
-* Телеграм-бот
