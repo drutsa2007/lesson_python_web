@@ -3,7 +3,7 @@ from progress.bar import Bar
 
 mylist = [1, 2, 3, 4, 5, 6, 7, 8]
 
-bar = Bar('Countdown', max=len(mylist), color="RED")
+bar = Bar('Countdown', max=len(mylist), color="red")
 
 for item in mylist:
     bar.next()
