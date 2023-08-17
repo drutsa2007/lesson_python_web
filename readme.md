@@ -10,6 +10,7 @@ or see list libraries in this file
 * Файлы конфигурации. <code>config</code>
 * Отправка электронной почты. <code>send_email</code>
 * Телеграм-бот. <code>telegram_bot</code>
+* Работа с цветом в терминале. <code>color_in_terminal</code>
 * 
 * Работа в форматом JSON (CRUD операции).  
 * Работа в форматом XML (CRUD операции).
