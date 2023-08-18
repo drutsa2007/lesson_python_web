@@ -6,6 +6,7 @@ from aiogram.filters.command import Command
 # Забираем API_TOKEN
 from token_tg import API_TOKEN
 
+
 # создаем объект bot
 bot = Bot(token=API_TOKEN)
 # создаем отслеживатель, который принимает все апдейты и обрабатывает их.
