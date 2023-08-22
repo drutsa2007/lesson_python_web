@@ -1,7 +1,6 @@
 /venv
 /.idea
 /telegram_bot/token_tg.py
-/tgbot_wife
 structure.txt
 .gitignore
 /send_email/my_data.sekret
