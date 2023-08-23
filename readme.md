@@ -12,7 +12,9 @@ or see list libraries in this file
 * Телеграм-бот. <code>telegram_bot</code>
 * Работа с цветом в терминале. <code>color_in_terminal</code>
 * Прогресс бар. <code>progress_bar</code>
+* Работа с JSON. <code>json</code>
+* Работа в форматом XML (CRUD операции) <code>xml</code>.
+* Брокер очередей. <code>rabbitmq</code>
+* Планировщик. <code>schedule_lib</code>
 * 
-* Работа в форматом JSON (CRUD операции).  
-* Работа в форматом XML (CRUD операции).
 * Отправка сообщения в телеграм пользователю.
