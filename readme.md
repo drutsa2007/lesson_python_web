@@ -16,5 +16,6 @@ or see list libraries in this file
 * Работа в форматом XML (CRUD операции) <code>xml</code>.
 * Брокер очередей. <code>rabbitmq</code>
 * Планировщик. <code>schedule_lib</code>
+* Работа с сокетом. <code>socket_simple</code>
 * 
 * Отправка сообщения в телеграм пользователю.

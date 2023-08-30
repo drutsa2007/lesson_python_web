@@ -5,3 +5,4 @@ progress
 jmespath
 pika
 schedule
+pymongo
