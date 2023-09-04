@@ -6,3 +6,6 @@ jmespath
 pika
 schedule
 pymongo
+pyautogui
+python_docx
+openpyxl

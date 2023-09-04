@@ -17,5 +17,8 @@ or see list libraries in this file
 * Брокер очередей. <code>rabbitmq</code>
 * Планировщик. <code>schedule_lib</code>
 * Работа с сокетом. <code>socket_simple</code>
+* Работа с потоками. <code>threading_sample</code>
+* Работа с Office. <code>office</code>
+* Docstrings. <code>docs_code</code>
 * 
 * Отправка сообщения в телеграм пользователю.
