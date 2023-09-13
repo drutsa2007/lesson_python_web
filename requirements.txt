@@ -9,3 +9,7 @@ pymongo
 pyautogui
 python_docx
 openpyxl
+SpeechRecognition
+PyAudio
+gTTS
+pyttsx3
