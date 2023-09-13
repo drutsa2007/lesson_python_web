@@ -13,3 +13,5 @@ SpeechRecognition
 PyAudio
 gTTS
 pyttsx3
+segno
+qrcode[pil]
