@@ -15,3 +15,4 @@ gTTS
 pyttsx3
 segno
 qrcode[pil]
+fpdf
