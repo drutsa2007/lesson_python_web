@@ -14,11 +14,13 @@ or see list libraries in this file
 * Прогресс бар. <code>progress_bar</code>
 * Работа с JSON. <code>json</code>
 * Работа в форматом XML (CRUD операции) <code>xml</code>.
-* Брокер очередей. <code>rabbitmq</code>
+* Брокер очередей - __RabbitMQ__. <code>rabbitmq</code>
 * Планировщик. <code>schedule_lib</code>
 * Работа с сокетом. <code>socket_simple</code>
 * Работа с потоками. <code>threading_sample</code>
 * Работа с Office. <code>office</code>
 * Docstrings. <code>docs_code</code>
+* NoSQL DB - __Redis__. <code>redis</code>
+* NoSQL DB - __MongoDB__. <code>mongodb</code>
 * 
 * Отправка сообщения в телеграм пользователю.
