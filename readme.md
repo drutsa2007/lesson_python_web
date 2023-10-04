@@ -22,5 +22,6 @@ or see list libraries in this file
 * Docstrings. <code>docs_code</code>
 * NoSQL DB - __Redis__. <code>redis</code>
 * NoSQL DB - __MongoDB__. <code>mongodb</code>
+* Парсинг и Web-скрапинг. <code>parse_data</code>
 * 
 * Отправка сообщения в телеграм пользователю.

@@ -19,3 +19,7 @@ fpdf
 tornado
 redis
 rejson
+requests
+beautifulsoup4
+selenium
+webdriver-manager

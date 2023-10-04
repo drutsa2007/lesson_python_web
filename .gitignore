@@ -4,3 +4,4 @@
 structure.txt
 .gitignore
 /send_email/my_data.sekret
+delete.py
