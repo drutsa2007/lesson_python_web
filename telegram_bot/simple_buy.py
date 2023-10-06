@@ -8,7 +8,7 @@ from aiogram.types.message import ContentType
 from token_tg import API_TOKEN
 
 
-bot = Bot(token="5204511405:AAHfspEPdbweI-BUwcT-flsZfCCzugER3Z8", parse_mode=ParseMode.HTML)
+bot = Bot(token=API_TOKEN, parse_mode=ParseMode.HTML)
 dp = Dispatcher()
 
 # amount в копейках
