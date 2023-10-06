@@ -14,10 +14,11 @@ dp = Dispatcher()
 @dp.message(Command('buttons'))
 async def send_welcome(message):
     # Создаем 2 кнопки
-    button_1 = KeyboardButton(text='Кнопка 1', request_contact=True)
+    button_1 = KeyboardButton(text='Кнопка 1')
     button_2 = KeyboardButton(text='Кнопка 2')
+    button_3 = KeyboardButton(text='Отправить телефон', request_contact=True)
     # Создаем объект клавиатуры
-    keyboard = ReplyKeyboardMarkup(keyboard=[[button_1, button_2]], resize_keyboard=True)
+    keyboard = ReplyKeyboardMarkup(keyboard=[[button_1, button_2], [button_3]], resize_keyboard=True)
     await message.answer('Выберите кнопку', reply_markup=keyboard)
 
 
@@ -33,7 +34,7 @@ async def process_button2(message):
 
 
 @dp.message(F.user_shared)
-async def process_button2(message):
+async def process_button3(message):
     await message.answer(text='Вы отправили телефон', reply_markup=ReplyKeyboardRemove())
 
 

@@ -6,7 +6,6 @@ from aiogram.filters import CommandStart
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from token_tg import API_TOKEN
 
-
 bot = Bot(token=API_TOKEN, parse_mode=ParseMode.HTML)
 dp = Dispatcher()
 
@@ -27,18 +26,18 @@ async def send_welcome(message):
     # await message.answer('Выберите кнопку', , parse_mode=None)
 
 
-# Этот хэндлер будет срабатывать на апдейт типа CallbackQuery
-# с data 'button1'
-@dp.callback_query(F.data=='button1')
+# Этот хэндлер будет срабатывать на апдейт типа CallbackQuery с data 'button1'
+@dp.callback_query(F.data == 'button1')
 async def process_button_1_press(callback):
-    await callback.message.edit_text(
+    await callback.message.answer(
         text='Была нажата кнопка 1',
         reply_markup=callback.message.reply_markup)
+    # для редактирование сообщения с которого была нажата кнопка используйте:
+    # await callback.message.edit_text(....)
 
 
-# Этот хэндлер будет срабатывать на апдейт типа CallbackQuery
-# с data 'button2'
-@dp.callback_query(F.data=='button2')
+# Этот хэндлер будет срабатывать на апдейт типа CallbackQuery с data 'button2'
+@dp.callback_query(F.data == 'button2')
 async def process_button_2_press(callback):
     await callback.message.answer(text='Была нажата кнопка 2', show_alert=True)
 
@@ -53,5 +52,4 @@ async def main():
 
 
 if __name__ == '__main__':
-   asyncio.run(main())
-
+    asyncio.run(main())
