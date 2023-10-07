@@ -1,0 +1,6 @@
+curs.execute('SELECT * FROM users WHERE name=%s', (name='Alfred'))
+alfred = curs.fetchone()
+
+# sql = ("CREATE DATABASE forum WITH OWNER = postgres ENCODING = 'UTF8' LOCALE_PROVIDER = 'libc' "
+#        "CONNECTION LIMIT = -1 IS_TEMPLATE = False;")
+# cursor.execute(sql)

@@ -1,0 +1,25 @@
+1. Запуск без Adminer
+docker run -d --rm -p 3306:3306 --name myMariaDB -e MARIADB_ROOT_PASSWORD=admin mariadb:11
+Если нужен дополнительный пользователь (не проверено)
+docker run -d --rm -p 3306:3306 --name myMariaDB -e MARIADB_USER=user1 -e MARIADB_PASSWORD=user2pass -e MARIADB_ROOT_PASSWORD=admin  mariadb:11
+
+
+2. Запуск с PhpMyAdmin
+
+Создаем сеть
+docker network create mariaNetwork
+
+Создаем контейнер для
+docker run -d --network mariaNetwork --rm -p 3306:3306 --name myMariaDB -e MARIADB_ROOT_PASSWORD=admin mariadb:11
+
+Создаем контейнер для Adminer
+docker run -d --network mariaNetwork -p 8080:8080 --name myAdminer -e ADMINER_DEFAULT_SERVER=mysql -e ADMINER_DESIGN='nette' adminer:4
+
+Запускаем
+docker inspect myPostgreSQL
+Ищем пункт Networks, берем оттуда IPAddress (у меня 172.20.0.2)
+
+Запускаем Adminer 127.0.0.1:8080
+вводим IP, root, admin
+
+

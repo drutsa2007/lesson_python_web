@@ -1,0 +1,22 @@
+1. Запуск без PhpMyAdmin
+docker run -d --rm -p 3306:3306 --name myMySQL -e MYSQL_ROOT_PASSWORD=admin mysql:8.1
+
+2. Запуск с PhpMyAdmin
+
+Создаем сеть
+docker network create mysqlNetwork
+
+Создаем контейнер для MySQL
+docker run -d --network mysqlNetwork -p 3306:3306 --name myMySQL -e MYSQL_ROOT_PASSWORD=admin mysql:8.1
+
+Запускаем
+docker inspect myPostgreSQL
+Ищем пункт Networks, берем оттуда IPAddress (у меня 172.20.0.2)
+
+Создаем контейнер для PhpMyAdmin
+docker run -d --network mysqlNetwork -p 8080:80 --name myPhpMyAdmin -e PMA_HOST=172.20.0.2 phpmyadmin:5.2
+
+
+Не использовать: проба пера
+docker run -d --network pgNetwork -rm -p 8080:80 --name myPhpMyAdmin --link mysql_db_server:db phpmyadmin:5.2
+docker run -d --network pgNetwork --rm -p 3306:3306 --name myMySQL -e MYSQL_ROOT_PASSWORD=admin mysql:8.1
